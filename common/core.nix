@@ -1,6 +1,6 @@
 # Common environment packages and settings for every host
 
-{ config, pkgs, ... }:
+{inputs, config, pkgs, ... }:
 
 {
 
@@ -29,11 +29,6 @@
   # We prefer network manager everywhere
   networking.networkmanager.enable = true;
 
-  # Homelab CA
-  security.pki.certificateFiles = [
-	../gnexus-labs-ca.pem
-
-  ];
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
