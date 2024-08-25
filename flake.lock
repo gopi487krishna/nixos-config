@@ -120,11 +120,25 @@
         "type": "indirect"
       }
     },
+    "private_configs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1724594850,
+        "narHash": "sha256-LBZgpoBhJg4fQWTGa1VOwsbaktm2I4NzSPhO+QIeI6s=",
+        "path": "/home/cooldev/.dotfiles/private",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/cooldev/.dotfiles/private",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "private_configs": "private_configs",
         "wezterm": "wezterm"
       }
     },

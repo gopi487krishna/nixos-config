@@ -7,6 +7,10 @@
 		catppuccin.url = "github:catppuccin/nix";
 		wezterm.url = "github:wez/wezterm?dir=nix";
 		wezterm.inputs.nixpkgs.follows = "nixpkgs";
+		private_configs = {
+			url = "path:/home/cooldev/.dotfiles/private";
+			flake = false;
+		};
 	};
 
 	outputs = { self, catppuccin, nixpkgs, home-manager, ... } @ inputs:
@@ -22,6 +26,7 @@
 				catppuccin.nixosModules.catppuccin
 				./hosts/marsx/configuration.nix
 				];
+				specialArgs = {inherit inputs;};
 
 			};
 			titanx = lib.nixosSystem {
@@ -30,6 +35,7 @@
 				catppuccin.nixosModules.catppuccin
 				./hosts/titanx/configuration.nix
 				];
+				specialArgs = {inherit inputs;};
 			};
 		};
 		homeConfigurations = {

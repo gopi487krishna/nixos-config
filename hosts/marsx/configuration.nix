@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -10,12 +10,20 @@
       ./hardware-configuration.nix
       # Common configuration
       ../../common/core.nix
-      # Wireguard config
-      ../../private/hosts/marsx/networking.nix
     ];
 
   
   networking.hostName = "marsx"; # Define your hostname.
+  networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
+  networking.wg-quick.interfaces.wg0.autostart = false;
+
+
+  # Firewall
+  networking.firewall = {
+  	enable = true;
+  	allowedTCPPorts = [ 5258 4242];
+	allowedUDPPorts = [ 4879 ];
+  };
 
   # Bootloader.
   boot.loader = {
@@ -54,7 +62,7 @@
   # RKVM client
   services.rkvm.enable = true;
   services.rkvm.client.enable = true;
-  services.rkvm.client.settings.password = builtins.readFile ../../private/rkvm_password;
+  services.rkvm.client.settings.password = builtins.readFile "${inputs.private_configs}/rkvm_password";
   services.rkvm.client.settings.server = "192.168.29.242:5258";
 
   # List packages installed in system profile. To search, run:

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -10,12 +10,17 @@
       ./hardware-configuration.nix
       # Common config
       ../../common/core.nix
-      # Networking info
-      ../../private/hosts/titanx/networking.nix
     ];
 
 
   networking.hostName = "titanx"; # Define your hostname.
+
+    # Firewall
+  networking.firewall = {
+  	enable = true;
+  	allowedTCPPorts = [ 5258 4242];
+	allowedUDPPorts = [ 4879 ];
+  };
 
   # Catppuccin
   boot.loader.grub.catppuccin.enable = true;
