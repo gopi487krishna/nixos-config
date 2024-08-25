@@ -1,0 +1,86 @@
+#Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      # Common configuration
+      ../../common/core.nix
+      # Wireguard config
+      ../../private/hosts/marsx/networking.nix
+    ];
+
+  
+  networking.hostName = "marsx"; # Define your hostname.
+
+  # Bootloader.
+  boot.loader = {
+  	grub = {
+		catppuccin.enable = true;
+		catppuccin.flavor = "mocha";
+		gfxpayloadEfi = "keep";
+		gfxmodeEfi = "640x480";
+
+	};
+  };
+
+  services.displayManager.sddm = {
+  	# Surface pro is high DPI
+	enableHidpi = true;
+	settings = {
+		General = {
+		      GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=3,QT_FONT_DPI=192";
+		};
+	};
+  };
+
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  # Enable catppuccin globally
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+
+  # Homelab ca
+  security.pki.certificateFiles = [
+   ../../gnexus-labs-ca.pem
+  ];
+
+  # RKVM client
+  services.rkvm.enable = true;
+  services.rkvm.client.enable = true;
+  services.rkvm.client.settings.password = builtins.readFile ../../private/rkvm_password;
+  services.rkvm.client.settings.server = "192.168.29.242:5258";
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+     waybar
+     hyprpaper
+     kitty
+     rofi-wayland-unwrapped
+     mosh
+     wireguard-tools
+  ];
+
+
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+  programs.gnupg.agent = {
+  enable = true;
+  enableSSHSupport = true;
+  };
+
+
+  programs.hyprland = {
+  	enable = true;
+	xwayland.enable = true;
+  };
+}
