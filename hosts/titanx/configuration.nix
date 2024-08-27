@@ -28,6 +28,11 @@
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
 
+  # Homelab CA
+  security.pki.certificateFiles = [
+  	/etc/nixos/files/homelab/gnexus-labs-ca.pem
+  ];
+
   # RKVM stuff
   services.rkvm.enable = true;
   services.rkvm.server.enable = true;

@@ -50,6 +50,12 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+
+  # Homelab CA
+  security.pki.certificateFiles = [
+  	/etc/nixos/files/homelab/gnexus-labs-ca.pem
+  ];
+
   # Enable catppuccin globally
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
