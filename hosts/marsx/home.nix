@@ -10,7 +10,13 @@
   # For managing wallpapers
   home.packages = with  pkgs; [
     hyprshot
+    onlyoffice-bin
+    # Note : corefonts may not be available in only office so use this workaround to make it visible
+    # https://nixos.wiki/wiki/Onlyoffice
+    corefonts
   ];
+
+  fonts.fontconfig.enable = true;
 
   # vscode pkgs,extensions
   programs.vscode = {
