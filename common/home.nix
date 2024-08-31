@@ -31,6 +31,9 @@
     pkgs.cowsay
     pkgs.rkvm
     pkgs.git
+    pkgs.fd
+    pkgs.bat
+    pkgs.fzf
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -78,6 +81,19 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+
+  # Fish shell support
+  programs.fish = {
+  	enable = true;
+	interactiveShellInit = ''
+	set fish_greeting
+	'';
+	plugins = [
+		{ name = "fzf"; src = pkgs.fishPlugins.fzf-fish.src; }
+	];
+  };
+  programs.fzf.enableFishIntegration = false;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

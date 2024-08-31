@@ -90,6 +90,9 @@
   #   enableSSHSupport = true;
   # };
 
+  # System wide fish shell support
+  programs.fish.enable = true;
+
    # Enable autoupgrades
   system.autoUpgrade.enable = true;
 
