@@ -5,11 +5,13 @@
   imports = 
   [
   	../../common/home.nix
+	../../applications/wezterm/wezterm_config.nix
+	../../applications/dunst/dunst_config.nix
   ];
 
   # For managing wallpapers
   home.packages = with  pkgs; [
-    hyprshot
+    wl-clipboard
     onlyoffice-bin
     # Note : corefonts may not be available in only office so use this workaround to make it visible
     # https://nixos.wiki/wiki/Onlyoffice
@@ -17,6 +19,9 @@
   ];
 
   fonts.fontconfig.enable = true;
+  programs.wezterm.enable = true;
+  services.dunst.enable = true;
+
 
   # vscode pkgs,extensions
   programs.vscode = {
@@ -26,13 +31,6 @@
 		teabyii.ayu
 	];
   };
-
-  # wezterm config
-  programs.wezterm = {
-  	enable = true;
-	package = inputs.wezterm.packages.${pkgs.system}.default;
-  };
-
 
   gtk = {
     enable = true;
