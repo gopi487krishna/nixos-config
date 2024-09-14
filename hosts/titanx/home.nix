@@ -12,6 +12,7 @@
   # environment.
   home.packages = with pkgs; [
     hyprshot
+    pkgs.onlyoffice-bin
   ];
 
   programs.vscode = {
