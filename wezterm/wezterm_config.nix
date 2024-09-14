@@ -2,7 +2,6 @@
 {
   # wezterm config
   programs.wezterm = {
-  	enable = true;
 	package = inputs.wezterm.packages.${pkgs.system}.default;
 	extraConfig = ''
 	local catppuccin_mocha = wezterm.color.get_builtin_schemes()['Catppuccin Mocha']
