@@ -82,7 +82,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      waybar
-     hyprpaper
      kitty
      rofi-wayland-unwrapped
      mosh
