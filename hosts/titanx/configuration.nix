@@ -48,6 +48,11 @@
      mosh
   ];
 
+
+fonts.fonts = with pkgs; [
+  corefonts
+];
+
   services = {
   	openssh.enable = true;
 	xserver = {
