@@ -7,10 +7,6 @@
 		catppuccin.url = "github:catppuccin/nix";
 		wezterm.url = "github:wez/wezterm?dir=nix";
 		wezterm.inputs.nixpkgs.follows = "nixpkgs";
-		private_configs = {
-			url = "path:/home/cooldev/.dotfiles/private";
-			flake = false;
-		};
 	};
 
 	outputs = { self, catppuccin, nixpkgs, home-manager, ... } @ inputs:
