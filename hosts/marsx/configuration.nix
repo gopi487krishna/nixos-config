@@ -63,7 +63,6 @@
   # RKVM client
   services.rkvm.enable = true;
   services.rkvm.client.enable = true;
-  services.rkvm.client.settings.password = builtins.readFile "${inputs.private_configs}/rkvm_password";
   services.rkvm.client.settings.server = "192.168.29.242:5258";
 
 
