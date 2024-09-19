@@ -11,7 +11,7 @@ $ sudo nixos-rebuild switch --flake .  # Specify profile name if needed
 $ home-manager switch --flake .
 ```
 - Note to future self :
-    - If build fails make private folder add rkvm password. Also setup wireguard if on marsx.
+    - Setup wireguard if on marsx.
     - For application specific configs, simply copy it from your github repo or another vm in the cluster.
  
 ## Contributing
