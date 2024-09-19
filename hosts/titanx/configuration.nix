@@ -36,6 +36,7 @@
   # RKVM stuff
   services.rkvm.enable = true;
   services.rkvm.server.enable = true;
+  services.rkvm.server.settings.password = "";
   services.rkvm.server.settings.switch-keys = [ "caps-lock" ];
 
 
