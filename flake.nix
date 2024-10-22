@@ -28,7 +28,7 @@
 				catppuccin.nixosModules.catppuccin
 				./hosts/marsx/configuration.nix
 				];
-				specialArgs = {inherit inputs;};
+				specialArgs = {inherit inputs; inherit gnexus-certs;};
 
 			};
 			titanx = lib.nixosSystem {
@@ -37,7 +37,7 @@
 				catppuccin.nixosModules.catppuccin
 				./hosts/titanx/configuration.nix
 				];
-				specialArgs = {inherit inputs;};
+				specialArgs = {inherit inputs; inherit gnexus-certs;};
 			};
 			venusx = lib.nixosSystem {
 				inherit system;

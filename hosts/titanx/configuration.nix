@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{inputs, config, pkgs, ... }:
+{inputs, gnexus-certs, config, pkgs, ... }:
 
 {
   imports =
@@ -27,11 +27,6 @@
   boot.loader.grub.catppuccin.flavor = "mocha";
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
-
-  # Homelab CA
-  security.pki.certificateFiles = [
-  	/etc/nixos/files/homelab/gnexus-labs-ca.pem
-  ];
 
   # RKVM stuff
   services.rkvm.enable = true;
