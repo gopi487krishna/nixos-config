@@ -34,6 +34,15 @@
 
   gtk = {
     enable = true;
+    theme = {
+	name = "Catppuccin-Macchiato-Compact-Peach-Dark";
+	package = pkgs.catppuccin-gtk.override {
+		accents = [ "peach" ];
+		size = "compact";
+		tweaks = [ "rimless" "black" ];
+		variant = "macchiato";
+	};
+    };
     cursorTheme = {
       package = pkgs.catppuccin-cursors.mochaSapphire;
       name = "catppuccin-mocha-sapphire-cursors";
