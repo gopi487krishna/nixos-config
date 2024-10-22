@@ -1,6 +1,6 @@
 # Common environment packages and settings for every host
 
-{inputs, config, pkgs, ... }:
+{inputs, gnexus-certs, config, pkgs, ... }:
 
 {
 
@@ -135,6 +135,12 @@
 	pulse.enable = true;
 	wireplumber.enable = true;
   };
+
+  # Homelab CA
+  security.pki.certificateFiles = [
+  	"${gnexus-certs}/gnexus-labs-ca.pem"
+  ];
+
 
   # Nix Version and Flakes
 
