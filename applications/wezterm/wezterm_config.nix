@@ -2,7 +2,7 @@
 {
   # wezterm config
   programs.wezterm = {
-	package = inputs.wezterm.packages.${pkgs.system}.default;
+	package = pkgs.wezterm;
 	extraConfig = ''
 	local catppuccin_mocha = wezterm.color.get_builtin_schemes()['Catppuccin Mocha']
 	catppuccin_mocha.background = '#000814'
@@ -12,6 +12,7 @@
 		  ['Catppuccin Mocha'] = catppuccin_mocha,
 		},
 		color_scheme = "Catppuccin Mocha",
+		front_end = "WebGpu",
 		window_decorations = "NONE",
 		enable_tab_bar = true,
 		tab_bar_at_bottom = true,
