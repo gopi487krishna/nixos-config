@@ -5,6 +5,7 @@
 { inputs, config, pkgs, ... }:
 
 {
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -12,7 +13,6 @@
       ../../common/core.nix
     ];
 
-  
   networking.hostName = "venusx"; # Define your hostname.
   networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
   networking.wg-quick.interfaces.wg0.autostart = false;
@@ -42,7 +42,7 @@
 
   # Homelab CA
   security.pki.certificateFiles = [
-  	/etc/nixos/files/homelab/gnexus-labs-ca.pem
+  	../../certs/gnexus-labs-ca.pem
   ];
 
   # Enable catppuccin globally
@@ -50,10 +50,10 @@
   catppuccin.flavor = "mocha";
 
   # RKVM client
-  services.rkvm.enable = true;
-  services.rkvm.client.enable = true;
-  services.rkvm.client.settings.server = "192.168.29.242:5258";
-
+  #services.rkvm.enable = true;
+  #services.rkvm.client.enable = true;
+  #services.rkvm.client.settings.server = "192.168.29.242:5258";
+  #services.rkvm.client.settings.password="";
 
   nixpkgs.overlays = [(final: super: {
     rofi-wayland-unwrapped = super.rofi-wayland-unwrapped.overrideAttrs({ patches ? [], ... }: {
@@ -77,6 +77,7 @@
      wireguard-tools
      niri
      swaybg
+     surface-control
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
