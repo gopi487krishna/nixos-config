@@ -72,7 +72,9 @@
      wget
      firefox
      fastfetch
+     xwayland-satellite
   ];
+
 
 
   # Important fonts. Preference DroidSansMono
