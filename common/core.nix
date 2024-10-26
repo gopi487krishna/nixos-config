@@ -1,6 +1,6 @@
 # Common environment packages and settings for every host
 
-{inputs, gnexus-certs, config, pkgs, ... }:
+{inputs, nixos-secrets, gnexus-certs, config, pkgs, ... }:
 
 {
 
@@ -73,6 +73,7 @@
      firefox
      fastfetch
      xwayland-satellite
+     inputs.agenix.packages.${system}.default
   ];
 
 
@@ -143,6 +144,12 @@
   	"${gnexus-certs}/gnexus-labs-ca.pem"
   ];
 
+  age.identityPaths = [ "/etc/ssh/ssh_private_key" ];
+  age.secrets = {
+  	"test" = {
+		file = "${nixos-secrets}/test.age";
+	};
+  };
 
   # Nix Version and Flakes
 
