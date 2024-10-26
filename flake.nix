@@ -12,10 +12,15 @@
 			url = "git+ssh://git@github.com/gopi487krishna/nixos-certs.git?ref=main";
 			flake = false;
 		};
+		agenix.url = "github:ryantm/agenix";
+		nixos-secrets = {
+			url = "git+ssh://git@github.com/gopi487krishna/nixos-secrets.git?ref=main";
+			flake = false;
+		};
 		
 	};
 
-	outputs = { self, gnexus-certs, catppuccin, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
+	outputs = { self, agenix, nixos-secrets, gnexus-certs, catppuccin, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
 		let 
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
@@ -26,27 +31,30 @@
 				inherit system;
 				modules = [
 				catppuccin.nixosModules.catppuccin
+				agenix.nixosModules.default
 				./hosts/marsx/configuration.nix
 				];
-				specialArgs = {inherit inputs; inherit gnexus-certs;};
+				specialArgs = {inherit inputs; inherit gnexus-certs; inherit nixos-secrets;};
 
 			};
 			titanx = lib.nixosSystem {
 				inherit system;
 				modules = [
 				catppuccin.nixosModules.catppuccin
+				agenix.nixosModules.default
 				./hosts/titanx/configuration.nix
 				];
-				specialArgs = {inherit inputs; inherit gnexus-certs;};
+				specialArgs = {inherit inputs; inherit gnexus-certs; inherit nixos-secrets;};
 			};
 			venusx = lib.nixosSystem {
 				inherit system;
 				modules = [
 				catppuccin.nixosModules.catppuccin
 				nixos-hardware.nixosModules.microsoft-surface-common
+				agenix.nixosModules.default
 				./hosts/venusx/configuration.nix
 				];
-				specialArgs = {inherit inputs; inherit gnexus-certs;};
+				specialArgs = {inherit inputs; inherit gnexus-certs; inherit nixos-secrets;};
 			};
 		};
 		homeConfigurations = {
