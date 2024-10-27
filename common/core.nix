@@ -1,6 +1,6 @@
 # Common environment packages and settings for every host
 
-{inputs, nixos-secrets, gnexus-certs, config, pkgs, ... }:
+{inputs, jaggernaut, nixos-secrets, gnexus-certs, config, pkgs, ... }:
 
 {
 
@@ -16,6 +16,11 @@
 	};
   };
 
+
+  # Jaggernaut
+  nixpkgs.overlays = [
+  	jaggernaut.overlays.default
+  ];
 
 
   # Display Manager : Our preference is sddm on all systems
@@ -74,6 +79,7 @@
      fastfetch
      xwayland-satellite
      inputs.agenix.packages.${system}.default
+     nvim-pkg
   ];
 
 
@@ -150,6 +156,7 @@
 		file = "${nixos-secrets}/test.age";
 	};
   };
+
 
   # Nix Version and Flakes
 
