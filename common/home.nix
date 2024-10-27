@@ -27,7 +27,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.neovim
     pkgs.cowsay
     pkgs.rkvm
     pkgs.git
