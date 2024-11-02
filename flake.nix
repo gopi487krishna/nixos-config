@@ -18,7 +18,7 @@
 			flake = false;
 		};
 		jaggernaut = {
-			url = "git+ssh://git@github.com/gopi487krishna/jaggernaut-nix";
+			url = "git+ssh://git@github.com/gopi487krishna/jaggernaut-nix.git?ref=main";
 		};  
 	};
 
