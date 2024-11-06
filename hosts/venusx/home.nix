@@ -13,6 +13,8 @@
   home.packages = with  pkgs; [
     wl-clipboard
     onlyoffice-bin
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
     # Note : corefonts may not be available in only office so use this workaround to make it visible
     # https://nixos.wiki/wiki/Onlyoffice
     corefonts
