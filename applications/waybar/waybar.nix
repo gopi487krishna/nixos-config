@@ -6,7 +6,7 @@
       patches = patches ++ [
         (final.fetchpatch {
           url = "https://github.com/gopi487krishna/Waybar/commit/3596e10388f03fc2230f805265a1c3dc03f64492.patch";
-          hash = "";
+          hash = "sha256-ZZYRuGkUZ/7Mbx/TnZBnnnGEjTTDjP9fZn5wtcy7nQI=";
         })
       ];
     });
