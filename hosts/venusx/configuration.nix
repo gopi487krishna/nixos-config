@@ -11,6 +11,8 @@
       ./hardware-configuration.nix
       # Common configuration
       ../../common/core.nix
+      # Custom waybar overlay
+      ../../applications/waybar/waybar.nix
     ];
 
   networking.hostName = "venusx"; # Define your hostname.
