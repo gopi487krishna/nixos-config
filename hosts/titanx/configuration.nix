@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
       # Common config
       ../../common/core.nix
+      # Waybar overlay
+      ../../applications/waybar/waybar.nix
     ];
 
 
