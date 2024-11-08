@@ -13,6 +13,8 @@
       ../../common/core.nix
       # Custom waybar overlay
       ../../applications/waybar/waybar.nix
+      # Custom rofi-wayland-unwrapped overlay
+      ../../applications/rofi-unwrapped/rofi-unwrapped.nix
     ];
 
   networking.hostName = "venusx"; # Define your hostname.
@@ -50,18 +52,6 @@
   #services.rkvm.client.enable = true;
   #services.rkvm.client.settings.server = "192.168.29.242:5258";
   #services.rkvm.client.settings.password="";
-
-  nixpkgs.overlays = [(final: super: {
-    rofi-wayland-unwrapped = super.rofi-wayland-unwrapped.overrideAttrs({ patches ? [], ... }: {
-      patches = patches ++ [
-        (final.fetchpatch {
-          url = "https://github.com/samueldr/rofi/commit/55425f72ff913eb72f5ba5f5d422b905d87577d0.patch";
-          hash = "sha256-vTUxtJs4SuyPk0PgnGlDIe/GVm/w1qZirEhKdBp4bHI=";
-        })
-      ];
-    });
-  })];
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
