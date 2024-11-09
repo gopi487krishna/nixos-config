@@ -2,11 +2,11 @@
 {
   nixpkgs.overlays = [(final: super: {
     waybar = super.waybar.overrideAttrs({ patches ? [], ... } : {
-      # Patch for timer support
       patches = patches ++ [
+        # Patch for timer support
         (final.fetchpatch {
-          url = "https://github.com/gopi487krishna/Waybar/commit/9f0d6d69fbf5941573b9f443f3c4e6d297b969a3.patch";
-          hash = "sha256-ONCRpndcNR18vcrZs0mEhmW7kFWFDRGqQBpUfbNObVA=";
+          url = "https://github.com/gopi487krishna/Waybar/commit/75e5f523b42a1fb4a145e2b27ced4a6fb0c52d9d.patch";
+          hash = "sha256-vKwW1/04SjYJIOh/EXWuS+d29RaxESSfNWVyVxFxGOU=";
         })
 
         (final.fetchpatch {
