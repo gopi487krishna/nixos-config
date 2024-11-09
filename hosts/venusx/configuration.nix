@@ -21,6 +21,18 @@
   networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
   networking.wg-quick.interfaces.wg0.autostart = false;
 
+  nix = {
+    distributedBuilds = true;
+    buildMachines = [
+      {
+        hostName = "nix-builder";
+        system = "x86_64-linux";
+        maxJobs = 100;
+        supportedFeatures = [ "benchmark" "big-parallel" ];
+      }
+    ];
+  };
+
 
   # Firewall
   networking.firewall = {
