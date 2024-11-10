@@ -73,7 +73,7 @@
      rofi-wayland-unwrapped
      mosh
      wireguard-tools
-     niri
+     inputs.niri.packages.${system}.default
      swaybg
      surface-control
   ];
