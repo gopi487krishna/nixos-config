@@ -20,9 +20,12 @@
 		jaggernaut = {
 			url = "git+ssh://git@github.com/gopi487krishna/jaggernaut-nix.git?ref=main";
 		};  
+    niri = {
+      url = "github:YaLTeR/niri";
+    };
 	};
 
-	outputs = { self, jaggernaut, agenix, nixos-secrets, gnexus-certs, catppuccin, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
+	outputs = { self, niri, jaggernaut, agenix, nixos-secrets, gnexus-certs, catppuccin, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
 		let 
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
@@ -36,7 +39,7 @@
 				agenix.nixosModules.default
 				./hosts/marsx/configuration.nix
 				];
-				specialArgs = {inherit inputs; inherit gnexus-certs; inherit nixos-secrets; inherit jaggernaut;};
+				specialArgs = {inherit inputs; inherit niri; inherit gnexus-certs; inherit nixos-secrets; inherit jaggernaut;};
 
 			};
 			titanx = lib.nixosSystem {
@@ -46,7 +49,7 @@
 				agenix.nixosModules.default
 				./hosts/titanx/configuration.nix
 				];
-				specialArgs = {inherit inputs; inherit gnexus-certs; inherit nixos-secrets; inherit jaggernaut;};
+				specialArgs = {inherit inputs; inherit niri; inherit gnexus-certs; inherit nixos-secrets; inherit jaggernaut;};
 			};
 			venusx = lib.nixosSystem {
 				inherit system;
