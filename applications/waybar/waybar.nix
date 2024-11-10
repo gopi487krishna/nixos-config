@@ -5,8 +5,8 @@
       patches = patches ++ [
         # Patch for timer support
         (final.fetchpatch {
-          url = "https://github.com/gopi487krishna/Waybar/commit/75e5f523b42a1fb4a145e2b27ced4a6fb0c52d9d.patch";
-          hash = "sha256-vKwW1/04SjYJIOh/EXWuS+d29RaxESSfNWVyVxFxGOU=";
+          url = "https://github.com/gopi487krishna/Waybar/commit/d2aa353e382172d04e444dfe0777339714c9f4ae.patch";
+          hash = "sha256-IC5LhbGbHF0ncbwablI52eJ6+wsvWoXQ9GC4M+bI39E=";
         })
 
         (final.fetchpatch {
