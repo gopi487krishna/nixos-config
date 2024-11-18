@@ -42,21 +42,6 @@
 	];
   };
 
-  gtk = {
-  	enable = true;
-	cursorTheme = {
-		package = pkgs.catppuccin-cursors.mochaDark;
-		name = "catppuccin-mocha-dark-cursors";
-		size = 24;
-	};
-  };
-
-  home.pointerCursor = {
-  	gtk.enable = true;
-	package = pkgs.catppuccin-cursors.mochaDark;
-	name = "catppuccin-moch-dark";
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
