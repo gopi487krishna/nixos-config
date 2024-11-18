@@ -2,7 +2,7 @@
 
 {
   # Core home
-  imports = 
+  imports =
   [
   	../../common/home.nix
 	../../applications/wezterm/wezterm_config.nix
@@ -34,30 +34,31 @@
 	];
   };
 
-  gtk = {
-    enable = true;
-    theme = {
-	name = "Catppuccin-Macchiato-Compact-Peach-Dark";
-	package = pkgs.catppuccin-gtk.override {
-		accents = [ "peach" ];
-		size = "compact";
-		tweaks = [ "rimless" "black" ];
-		variant = "macchiato";
-	};
-    };
-    cursorTheme = {
-      package = pkgs.catppuccin-cursors.mochaSapphire;
-      name = "catppuccin-mocha-sapphire-cursors";
-      size = 32;
-    };
-  };
+	  gtk = {
+	    enable = true;
+	    theme = {
+	      name = "Catppuccin-Macchiato-Compact-Peach-Dark";
+	      package = pkgs.catppuccin-gtk.override {
+	 	    accents = [ "peach" ];
+	 	    size = "compact";
+	 	    tweaks = [ "rimless" "black" ];
+	 	    variant = "macchiato";
+        };
+	    };
+	    cursorTheme = {
+	      package = pkgs.bibata-cursors;
+	      name = "Bibata-Original-Classic";
+	      size = 24;
+	    };
+	  };
 
-  home.pointerCursor = {
-  	gtk.enable = true;
-      	package = pkgs.catppuccin-cursors.mochaSapphire;
-      	name = "catppuccin-mocha-sapphire-cursors";
-  	size = 32;
-  };
+    home.pointerCursor = {
+      gtk.enable = true;
+	    package = pkgs.bibata-cursors;
+	    name = "Bibata-Original-Classic";
+      size = 24;
+    };
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
