@@ -3,6 +3,11 @@
 # Common home manager stuff for all hosts
 
 {
+
+  imports = [
+    ../applications/kanagawa-gtk/kanagawa.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "cooldev";
@@ -93,7 +98,6 @@
 	];
   };
   programs.fzf.enableFishIntegration = false;
-
 
   # Keep the gtk theme and cursor theme on all systems
   gtk = {
