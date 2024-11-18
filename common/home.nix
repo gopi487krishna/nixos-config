@@ -95,18 +95,12 @@
   programs.fzf.enableFishIntegration = false;
 
 
-  # We want the same gtk theme and cursor theme on all systems
-
+  # Keep the gtk theme and cursor theme on all systems
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Peach-Dark";
-      package = pkgs.catppuccin-gtk.override {
- 	    accents = [ "peach" ];
- 	    size = "compact";
- 	    tweaks = [ "rimless" "black" ];
- 	    variant = "macchiato";
-      };
+      name = "Kanagawa-BL";
+      package = pkgs.kanagawa-gtk-theme;
     };
     cursorTheme = {
       package = pkgs.bibata-cursors;
