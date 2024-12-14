@@ -18,6 +18,7 @@
     # Note : corefonts may not be available in only office so use this workaround to make it visible
     # https://nixos.wiki/wiki/Onlyoffice
     corefonts
+    gh
   ];
 
   fonts.fontconfig.enable = true;
