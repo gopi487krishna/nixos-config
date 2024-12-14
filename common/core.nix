@@ -23,13 +23,13 @@
   ];
 
 
-  # Display Manager : Our preference is sddm on all systems
-  services.displayManager.sddm = {
-  	enable = true;
-	package = pkgs.kdePackages.sddm;
+  # Display Manager : Our preference is ly on all systems
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "matrix";
+    };
   };
-
-
 
   # We prefer network manager everywhere
   networking.networkmanager.enable = true;

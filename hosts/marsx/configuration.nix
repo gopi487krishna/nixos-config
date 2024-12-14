@@ -40,17 +40,6 @@
 	};
   };
 
-  services.displayManager.sddm = {
-  	# Surface pro is high DPI
-	enableHidpi = true;
-	settings = {
-		General = {
-		      GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=3,QT_FONT_DPI=192";
-		};
-	};
-  };
-
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
