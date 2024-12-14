@@ -88,7 +88,10 @@
   fonts.packages = with pkgs; [
   	font-awesome
   	noto-fonts
-	(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "JetBrainsMono" ]; })
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.droid-sans-mono
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
