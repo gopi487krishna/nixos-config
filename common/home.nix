@@ -89,7 +89,12 @@
 
   # Fish shell support
   programs.fish = {
-  	enable = true;
+  shellAliases = {
+    connect_ubwork = "wezterm cli spawn --domain-name SSH:ubuntu-work -- sh -c 'cd /home/cooldev/kbounds_pass; bash -l'"; 
+    connect_galileo = "wezterm cli spawn --domain-name SSH:galileo"; 
+    dotfiles = "cd /home/cooldev/.dotfiles"; 
+  };
+  enable = true;
 	interactiveShellInit = ''
 	set fish_greeting
 	'';
