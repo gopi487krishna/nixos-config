@@ -9,18 +9,6 @@
 	catppuccin_mocha.foreground = '#cdd6f4'
   local is_scratch_open = false
 	return {
-    keys = {
-      {
-        key = 'T',
-        mods = 'SUPER|SHIFT',
-        action = wezterm.action_callback(function(win, pane)
-          win:perform_action(wezterm.action.SplitVertical { domain = "CurrentPaneDomain", args = {"nvim", "/home/cooldev/scratch-notes.md"}}, pane)
-          local new_pane = win:active_pane()
-          win:perform_action(wezterm.action.RotatePanes("Clockwise"), pane)
-          win:perform_action(wezterm.action.ActivatePaneByIndex(0), new_pane)
-        end),
-    }
-    },
 		color_schemes = {
 		  ['Catppuccin Mocha'] = catppuccin_mocha,
 		},
