@@ -53,10 +53,10 @@
     LC_TIME = "en_IN";
   };
 
-  # Configure keymap in X11
+  # Keyboard layout
   services.xserver.xkb = {
     layout = "us";
-    variant = "";
+    #variant = "colemak_dh";
   };
 
   # cooldev must exist on all of my systems
