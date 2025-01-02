@@ -99,7 +99,6 @@
   enable = true;
 	interactiveShellInit = ''
 	set fish_greeting
-  fastfetch
 	'';
 	plugins = [
 		{ name = "fzf"; src = pkgs.fishPlugins.fzf-fish.src; }
