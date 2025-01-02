@@ -69,7 +69,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      waybar
-     kitty
      rofi-wayland-unwrapped
      mosh
      wireguard-tools
@@ -82,6 +81,7 @@
         -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
         "$@"
      '')
+     inputs.ghostty.packages."${pkgs.system}".default
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
