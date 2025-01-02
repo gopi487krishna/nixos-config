@@ -19,11 +19,12 @@
 		};
 		jaggernaut = {
 			url = "git+ssh://git@github.com/gopi487krishna/jaggernaut-nix.git?ref=main";
-		};  
+		};
+    ghostty = { url = "github:ghostty-org/ghostty"; };
 	};
 
-	outputs = { self, jaggernaut, agenix, nixos-secrets, gnexus-certs, catppuccin, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
-		let 
+	outputs = { self, ghostty, jaggernaut, agenix, nixos-secrets, gnexus-certs, catppuccin, nixpkgs, home-manager, nixos-hardware, ... } @ inputs:
+		let
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
 			pkgs = nixpkgs.legacyPackages.${system};
@@ -62,8 +63,8 @@
 		homeConfigurations = {
 			"cooldev@marsx" = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
-				modules = [ 
-				./hosts/marsx/home.nix 
+				modules = [
+				./hosts/marsx/home.nix
 				catppuccin.homeManagerModules.catppuccin
 				];
 				extraSpecialArgs = {inherit inputs;};
