@@ -19,6 +19,7 @@
     # https://nixos.wiki/wiki/Onlyoffice
     corefonts
     gh
+    joplin
   ];
 
   fonts.fontconfig.enable = true;
@@ -34,6 +35,14 @@
 		teabyii.ayu
 	];
   };
+
+  # Enable zellij and provide fish integration
+  programs.zellij = {
+    enable = true;
+    #enableFishIntegration = true;
+  };
+
+  programs.lazygit.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
