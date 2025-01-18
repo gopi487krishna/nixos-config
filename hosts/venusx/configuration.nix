@@ -82,6 +82,7 @@
         "$@"
      '')
      inputs.ghostty.packages."${pkgs.system}".default
+     alacritty
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
