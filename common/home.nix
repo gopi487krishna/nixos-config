@@ -92,7 +92,7 @@
   shellAliases = {
     #connect_ubwork = "wezterm cli spawn --domain-name SSH:ubuntu-work -- sh -c 'cd /home/cooldev/kbounds_pass; bash -l'"; 
     connect_ubwork = "mosh ubuntu-work";
-    connect_galileo = "mosh galileo";
+    connect_galileo = "ssh galileo";
     #connect_galileo = "wezterm cli spawn --domain-name SSH:galileo"; 
     dotfiles = "cd /home/cooldev/.dotfiles"; 
   };
