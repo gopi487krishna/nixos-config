@@ -83,6 +83,7 @@
      '')
      inputs.ghostty.packages."${pkgs.system}".default
      alacritty
+     shotcut
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
