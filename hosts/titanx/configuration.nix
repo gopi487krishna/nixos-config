@@ -59,19 +59,12 @@
   	openssh.enable = true;
 	xserver = {
 		enable = true;
-		videoDrivers = [ "nvidia" ];
+		videoDrivers = [ "nouveau" ];
 	};
   };
 
   hardware = {
   	graphics.enable = true;
-	nvidia = {
-		modesetting.enable = true;
-		powerManagement.enable = false;
-		powerManagement.finegrained = false;
-		open = false;
-		nvidiaSettings = true;
-	};
   };
 
   programs.hyprland = {
