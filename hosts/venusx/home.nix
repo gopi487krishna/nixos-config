@@ -20,6 +20,7 @@
     corefonts
     gh
     joplin
+    tea
   ];
 
   fonts.fontconfig.enable = true;
