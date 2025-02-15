@@ -21,6 +21,7 @@
   networking.wg-quick.interfaces.wg0.configFile = "/etc/nixos/files/wireguard/wg0.conf";
   networking.wg-quick.interfaces.wg0.autostart = false;
 
+
   nix = {
     distributedBuilds = true;
     buildMachines = [
@@ -31,6 +32,14 @@
         supportedFeatures = [ "benchmark" "big-parallel" ];
       }
     ];
+  };
+
+  # SSH extra
+  programs.ssh = {
+    extraConfig = ''
+    Host *
+    ConnectTimeout 10
+    '';
   };
 
 
