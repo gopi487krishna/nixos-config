@@ -32,8 +32,6 @@
   # Bootloader.
   boot.loader = {
   	grub = {
-		catppuccin.enable = true;
-		catppuccin.flavor = "mocha";
 		gfxpayloadEfi = "keep";
 		gfxmodeEfi = "640x480";
 
@@ -48,10 +46,6 @@
   security.pki.certificateFiles = [
   	/etc/nixos/files/homelab/gnexus-labs-ca.pem
   ];
-
-  # Enable catppuccin globally
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
 
   # RKVM client
   services.rkvm.enable = true;

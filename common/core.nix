@@ -16,6 +16,15 @@
 	};
   };
 
+  # Catppuccin theme.
+  catppuccin = {
+   enable = true;
+   flavor = "mocha";
+   grub = {
+      flavor = "mocha";
+      enable = true;
+   };
+  };
 
   # Jaggernaut
   nixpkgs.overlays = [

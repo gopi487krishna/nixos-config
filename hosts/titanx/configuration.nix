@@ -26,12 +26,6 @@
 	allowedUDPPorts = [ 4879 ];
   };
 
-  # Catppuccin
-  boot.loader.grub.catppuccin.enable = true;
-  boot.loader.grub.catppuccin.flavor = "mocha";
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
-
   # RKVM stuff
   services.rkvm.enable = true;
   services.rkvm.server.enable = true;

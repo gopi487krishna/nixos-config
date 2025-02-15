@@ -44,8 +44,6 @@
   # Bootloader.
   boot.loader = {
   	grub = {
-		catppuccin.enable = true;
-		catppuccin.flavor = "mocha";
 		gfxpayloadEfi = "keep";
 
 	};
@@ -54,10 +52,6 @@
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
-  # Enable catppuccin globally
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
 
   # RKVM client
   #services.rkvm.enable = true;
