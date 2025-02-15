@@ -5,8 +5,6 @@
 		home-manager.url = "github:nix-community/home-manager/master";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		catppuccin.url = "github:catppuccin/nix";
-		#wezterm.url = "github:wez/wezterm?dir=nix";
-		#wezterm.inputs.nixpkgs.follows = "nixpkgs";
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 		gnexus-certs = {
 			url = "git+ssh://git@github.com/gopi487krishna/nixos-certs.git?ref=main";

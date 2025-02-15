@@ -5,7 +5,6 @@
   imports = 
   [
   	../../common/home.nix
-	../../applications/wezterm/wezterm_config.nix
 	../../applications/dunst/dunst_config.nix
   ];
 
@@ -19,7 +18,6 @@
   ];
 
   fonts.fontconfig.enable = true;
-  programs.wezterm.enable = true;
   services.dunst.enable = true;
 
 

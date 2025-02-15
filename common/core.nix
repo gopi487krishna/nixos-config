@@ -90,6 +90,7 @@
      inputs.agenix.packages.${system}.default
      nvim-pkg
      swaybg
+     inputs.ghostty.packages."${pkgs.system}".default
   ];
 
 
