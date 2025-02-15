@@ -138,9 +138,10 @@
 
   hardware = {
   	graphics.enable = true;
-	# Prefer wireplumber everywhere
-	pulseaudio.enable = false;
   };
+
+	# Prefer wireplumber everywhere
+	services.pulseaudio.enable = false;
 
   # Some apps do require this to start in wayland
   environment.sessionVariables = {
