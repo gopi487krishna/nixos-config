@@ -127,6 +127,9 @@
       size = 24;
     };
 
+  # Enable lazygit on all systems
+  programs.lazygit.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
