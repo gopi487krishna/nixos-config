@@ -73,7 +73,6 @@
      mosh
      wireguard-tools
      niri
-     swaybg
      surface-control
      qemu
      (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''

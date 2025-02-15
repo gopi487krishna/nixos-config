@@ -80,6 +80,7 @@
      xwayland-satellite
      inputs.agenix.packages.${system}.default
      nvim-pkg
+     swaybg
   ];
 
 

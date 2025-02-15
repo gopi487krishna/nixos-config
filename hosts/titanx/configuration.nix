@@ -46,7 +46,6 @@
      rofi-wayland-unwrapped
      mosh
      niri
-     swaybg
   ];
 
 

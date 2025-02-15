@@ -69,7 +69,6 @@
      mosh
      wireguard-tools
      niri
-     swaybg
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
