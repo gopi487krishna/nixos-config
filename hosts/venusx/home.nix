@@ -20,6 +20,8 @@
     gh
     joplin
     tea
+    anytype
+    obsidian
   ];
 
   fonts.fontconfig.enable = true;
