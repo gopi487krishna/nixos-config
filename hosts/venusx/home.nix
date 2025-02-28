@@ -22,6 +22,7 @@
     tea
     anytype
     obsidian
+    aider-chat
   ];
 
   fonts.fontconfig.enable = true;
