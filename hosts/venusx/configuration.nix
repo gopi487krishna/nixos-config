@@ -62,6 +62,11 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  # ddc util
+  hardware.i2c.enable = true;
+  boot.kernelModules = [ "i2c-dev" ];
+
+
   # RKVM client
   #services.rkvm.enable = true;
   #services.rkvm.client.enable = true;
@@ -86,6 +91,7 @@
      inputs.ghostty.packages."${pkgs.system}".default
      alacritty
      shotcut
+     ddcutil
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
