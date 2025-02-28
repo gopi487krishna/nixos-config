@@ -23,6 +23,7 @@
     anytype
     obsidian
     aider-chat
+    zellij
   ];
 
   fonts.fontconfig.enable = true;
@@ -39,11 +40,11 @@
   };
 
   # Enable zellij and provide fish integration
-  programs.zellij = {
-    enable = true;
-    #enableFishIntegration = true;
-  };
-
+  # programs.zellij = {
+  #   enable = true;
+  #   #enableFishIntegration = true;
+  # };
+  #
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
