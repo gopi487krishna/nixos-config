@@ -83,6 +83,13 @@
 				];
 				extraSpecialArgs = {inherit inputs;};
 			};
+			"cooldev@kforge" = home-manager.lib.homeManagerConfiguration {
+				inherit pkgs;
+				modules = [
+				./hosts/kforge/home.nix
+				];
+				extraSpecialArgs = {inherit inputs;};
+			};
 		};
 	};
 }
