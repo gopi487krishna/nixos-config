@@ -46,7 +46,7 @@
   # Firewall
   networking.firewall = {
   	enable = true;
-  	allowedTCPPorts = [ 5258 4242];
+  	allowedTCPPorts = [ 5258 4242 5901 6080];
 	allowedUDPPorts = [ 4879 ];
   };
 
@@ -64,7 +64,12 @@
 
   # ddc util
   hardware.i2c.enable = true;
-  boot.kernelModules = [ "i2c-dev" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.kernelModules = [ "i2c-dev" "v4l2loopback" ];
+  security.polkit.enable = true;
+  programs.obs-studio.enableVirtualCamera = true;
 
 
   # RKVM client
@@ -92,8 +97,39 @@
      alacritty
      shotcut
      ddcutil
+     immersed-vr
+     turbovnc
+     wayvnc
+     hyprpaper
+     moonlight-qt
+     rustlings
   ];
   services.displayManager.sessionPackages = [ pkgs.niri ];
+
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+
+  environment.gnome.excludePackages = (with pkgs; [
+    atomix # puzzle game
+    cheese # webcam tool
+    epiphany # web browser
+    evince # document viewer
+    geary # email reader
+    gedit # text editor
+    gnome-characters
+    gnome-music
+    gnome-photos
+    gnome-terminal
+    gnome-tour
+    hitori # sudoku game
+    iagno # go game
+    tali # poker game
+    totem # video player
+  ]);
+
 
 
   # Enable the OpenSSH daemon.
@@ -110,18 +146,39 @@
 	xwayland.enable = true;
   };
 
+  xdg = {
+    portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal
+          pkgs.xdg-desktop-portal
+          pkgs.xdg-desktop-portal-wlr
+        ];
+      };
+  };
+
   # Graphics options
   nixpkgs.config.packageOverrides = pkgs: {
   intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
   hardware.graphics = { 
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       libvdpau-va-gl
+      libva
+      vaapiVdpau
     ];
   };
+
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
+
+  # Enable Docker
+  # virtualisation.docker.enable = true;
 
 }
