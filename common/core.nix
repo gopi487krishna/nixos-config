@@ -72,7 +72,7 @@
   users.users.cooldev = {
     isNormalUser = true;
     description = "Gopi Krishna Menon";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker"];
     packages = with pkgs; [];
   };
 
