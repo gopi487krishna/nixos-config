@@ -1,4 +1,4 @@
-{inputs, config, pkgs, ... }:
+{inputs, jaggernaut, config, pkgs, ... }:
 
 {
 
@@ -20,6 +20,12 @@
 	};
   };
 
+  # Jaggernaut
+  nixpkgs.overlays = [
+  	jaggernaut.overlays.default
+  ];
+
+
 
   # Core home
 	#  imports =
@@ -31,6 +37,7 @@
   # For managing wallpapers
   home.packages = with  pkgs; [
     neofetch
+    nvim-pkg
   ];
 
   # Let Home Manager install and manage itself.

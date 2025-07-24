@@ -88,7 +88,7 @@
 				modules = [
 				./hosts/kforge/home.nix
 				];
-				extraSpecialArgs = {inherit inputs;};
+				extraSpecialArgs = {inherit inputs; inherit jaggernaut;};
 			};
 		};
 	};
