@@ -305,11 +305,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1749626314,
-        "narHash": "sha256-8IY2tdwtiT4+nMEcvq6A4a67xzW2VgJkYlQ+UHQM+TY=",
+        "lastModified": 1753880321,
+        "narHash": "sha256-dOKkKysgJJ9bYS0M2cgggBU1AKUiz7G2jGaTH7uIdQA=",
         "ref": "main",
-        "rev": "be7c41f24d84107989626d2128793da914596c9c",
-        "revCount": 174,
+        "rev": "f46137cb4bc2830a7bb9d8210397e94666bfc8de",
+        "revCount": 176,
         "type": "git",
         "url": "ssh://git@github.com/gopi487krishna/jaggernaut-nix.git"
       },
