@@ -32,6 +32,11 @@
   fonts.fontconfig.enable = true;
   services.dunst.enable = true;
 
+  # Zoxide for cd command
+  programs.zoxide.enable = true;
+  programs.zoxide.options = [
+    "--cmd cd"
+  ];
   programs.vscode = {
   	enable = true;
 	extensions = with pkgs.vscode-extensions; [
