@@ -42,6 +42,9 @@
     '';
   };
 
+  # Thunderbird
+  programs.thunderbird.enable = true;
+
 
   # Firewall
   networking.firewall = {
@@ -61,6 +64,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  hardware.microsoft-surface.kernelVersion = "stable";
 
   # ddc util
   hardware.i2c.enable = true;
@@ -93,7 +97,8 @@
         -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
         "$@"
      '')
-     inputs.ghostty.packages."${pkgs.system}".default
+     # inputs.ghostty.packages."${pkgs.system}".default
+     kitty
      alacritty
      shotcut
      ddcutil
